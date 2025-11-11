@@ -26,6 +26,7 @@ class Patch2
         {
             return;
         }
+        var random = new Random();
 
 
         var path0Type = __result[0].rewardType;
@@ -33,7 +34,7 @@ class Patch2
             path0Type == RewardType.Silk ||
             path0Type == RewardType.Moonstone)
         {
-            __result[0].rewardType = RewardType.Paragon;
+            __result[0].rewardType = random.Next(2) == 0 ? RewardType.Paragon : RewardType.ParagonLevelUp;
         }
 
 
@@ -42,7 +43,7 @@ class Patch2
             path1Type == RewardType.Silk ||
             path1Type == RewardType.Moonstone)
         {
-            __result[1].rewardType = RewardType.Paragon;
+            __result[1].rewardType = random.Next(2) == 0 ? RewardType.Paragon : RewardType.ParagonLevelUp;
         }
 
     }
